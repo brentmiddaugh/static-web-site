@@ -8,7 +8,7 @@ phases:
      - echo "pre_build step"
  build:
    commands:
-     - aws s3 sync dist s3://telispire-static-web-site --delete
+     - aws s3 sync dist s3://telispire-static-web-site
  post_build:
    commands:
      - echo "post_build step"
