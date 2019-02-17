@@ -1,14 +1,7 @@
 version: 0.2
 phases:
- install:
-   commands:
-     - echo "install step"
- pre_build:
-   commands:
-     - echo "pre_build step"
- build:
-   commands:
-     - aws s3 sync dist s3://telispire-static-web-site
- post_build:
-   commands:
-     - echo "post_build step"
+    install:
+        commands:
+        - npm install
+        - npm run build
+        - aws s3 sync dist s3://telispire-static-web-site --delete
